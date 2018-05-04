@@ -1,12 +1,8 @@
-from hero_rpg_game_1 import *
-from goblin_rpg_game_1 import *
+from hero_rpg_game_1 import Hero
+from goblin_rpg_game_1 import Goblin
 
 daHero = Hero(10, 5)
-
 daGoblin = Goblin(6, 2)
-
-
-
 
 while daGoblin.alive() and daHero.alive():
     print("What do you want to do?: ")
@@ -16,6 +12,7 @@ while daGoblin.alive() and daHero.alive():
     user_input = input(": ")
     if user_input == "1":
         daHero.attack(daGoblin)
+        daGoblin.print_status()
         daGoblin.attack(daHero)
         daHero.print_status()
         if not daGoblin.alive():
